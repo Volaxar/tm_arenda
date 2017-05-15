@@ -1,0 +1,52 @@
+<h3>Напишите нам</h3>
+
+<form action="{% url 'contact' %}" method="post">
+  {% csrf_token %}
+
+  <div class="contact-form-left">
+
+    <div class="contact-field">
+      {{ form.sender.label_tag }}
+      {{ form.sender }}
+    </div>
+
+    <div class="contact-field">
+      {{ form.phone.label_tag }}
+      {{ form.phone }}
+    </div>
+
+    <div class="contact-field">
+      {{ form.mail.label_tag }}
+      {{ form.mail }}
+    </div>
+
+  </div>
+
+  <div class="contact-form-right">
+
+    <div class="contact-field">
+      {{ form.message.label_tag }}
+      {{ form.message }}
+    </div>
+
+  </div>
+
+  <div class="contact-form-bottom">
+    <input type="submit" value="Отправить">
+  </div>
+
+  {% if successful_send %}
+    <div class="successful-send">
+      Сообщение успешно отправлено.
+    </div>
+  {% endif %}
+
+  {% if form.non_field_errors or form.errors %}
+    <div class="fail-send">
+      {% for field, errors in form.errors.items %}
+        <span data-field="{{ field }}">{{ errors }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</form>

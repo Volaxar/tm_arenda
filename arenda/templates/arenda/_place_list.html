@@ -1,0 +1,19 @@
+{% include "arenda/_filter.html" %}
+
+<div class="grid">
+
+  {% if place_list.count %}
+
+    {% for place in place_list %}
+      {% include "arenda/_place_list_item.html" %}
+    {% endfor %}
+
+  {% else %}
+
+    <div class="empty-place"><h2>Предложения отсутствуют</h2></div>
+
+  {% endif %}
+
+</div>
+
+{% include "arenda/_pagination.html" %}

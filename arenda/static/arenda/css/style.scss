@@ -1,0 +1,93 @@
+/* VARS */
+
+$min_width: 488px; /* Минимальная ширина контента */
+$clr_width: 528px; /* При ширине меньше заданного значения убираются паддинги и марджины */
+$max_width: 996px; /* Максимальная ширина контента*/
+
+$clr_contact_l1_width: 975px; /* Страница контактов, поле текста сообщения под остальными полями формы */
+$clr_contact_l2_width: 776px; /* Страница контактов, форма под основным текстом */
+$clr_contact_l3_width: 586px; /* Страница контактов, l1 + l2 */
+
+$clr_item_width: 875px; /* Страница помещения, характеристики и описание под фотографиями */
+
+$color_body_background: #f2f2f2; /* Цвет фона */
+
+$color_menu_background: #373737; /* Цвет фона меню и футера */
+$color_menu_link: #fff; /* Цвет ссылок меню */
+
+$color_background: #f8f8f8; /* Цвет фона фильтра и полей формы */
+
+$color_border: #e5e5e5; /* Цвет рамок */
+$color_shadow: rgba(0, 0, 0, .25); /* Цвет тени */
+
+$color_link: #646464; /* Цвет ссылок */
+$color_active_link: #337ab7; /* Цвет ссылок при наведении */
+
+$color_pagination_active_background: #337ab7; /* Цвет фона пагинации, текущая страница */
+$color_pagination_active_text: #fff; /* Цвет текста пагинации, текушая страница */
+$color_pagination_disable_text: #777777; /* Цвет текста пагинации, отключенная кнопка */
+$color_pagination_background: #fff; /* Цвет фона кнопок пагинации */
+$color_pagination_hover_background: #eeeeee; /* Цвет фона кнопок пагинации при наведении курсора */
+
+$color_form_border: #337ab7;
+$color_submit_text: #fff;
+
+$color_footer_text: #bababa;  /* Цвет текста футера */
+
+$color_text: #505050;
+
+
+/* MAIN */
+
+body {
+  margin: 0;
+  background-color: $color_body_background;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+div.wrapper {
+  background: #fff;
+  max-width: $max_width;
+  min-width: $min_width;
+  margin: 0 auto;
+
+  @media (min-width: $min_width) {
+    box-shadow: 0 0 15px $color_shadow;
+  }
+}
+
+div.content {
+  padding: 0 20px 20px;
+
+  @media (max-width: $clr_width) {
+    padding: 0 0 20px;
+  }
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  padding-top: 20px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 15px;
+  text-transform: uppercase;
+  line-height: 18px;
+  margin: 0;
+}
+
+/* IMPORTS */
+
+@import "top_menu";
+@import "place_list";
+@import "filter";
+@import "pagination";
+@import "place_detail";
+@import "about";
+@import "contact";
+@import "footer";
+

@@ -1,0 +1,31 @@
+{% load static thumbnail %}
+
+<div class="grid-item">
+  <a href="{% url 'detail' place.id %}">
+
+    {% thumbnail place.image_set.first "220x125" crop="center" as im %}
+      <img src="{{ im.url }}">
+    {% empty %}
+      <img src="{% static 'arenda/images/foto.jpg' %}">
+    {% endthumbnail %}
+
+    <div class="desc">
+      <p>
+        <b>{{ place.name }}</b>
+      </p>
+
+      <p>
+        Метраж:
+        <b>{{ place.area }}</b>
+        м<sup>2</sup>
+      </p>
+
+      <p>
+        Цена:
+        <b>{{ place.price }}</b>
+        руб. в мес.
+      </p>
+    </div>
+  </a>
+
+</div>

@@ -1,0 +1,24 @@
+nav {
+  background: $color_menu_background;
+  min-width: $min_width;
+
+  ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    color: $color_menu_link;
+    line-height: 37px;
+    text-decoration: none;
+    padding: 0 27px;
+  }
+}
+

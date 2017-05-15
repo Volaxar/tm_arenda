@@ -1,0 +1,152 @@
+div.content-contact {
+  color: $color_text;
+
+  div.contact-wrap {
+    padding-bottom: 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    @media (max-width: $clr_contact_l2_width) {
+      flex-wrap: wrap;
+    }
+  }
+
+  h1 {
+    padding-bottom: 20px;
+  }
+
+  div.contact-info {
+    min-width: 250px;
+    margin-right: 20px;
+
+    @media (max-width: $clr_contact_l2_width) {
+      margin-right: 0;
+    }
+
+    p {
+      text-align: justify;
+      text-indent: 2em;
+    }
+  }
+
+  div.contact-form {
+    min-width: 506px;
+
+    border: 1px solid $color_form_border;
+    padding: 20px;
+    margin-top: 50px;
+
+    @media (max-width: $clr_contact_l1_width) {
+      min-width: 307px;
+      max-width: 307px;
+    }
+
+    @media (max-width: $clr_contact_l2_width) {
+      min-width: 506px;
+      max-width: 506px;
+      margin-top: 0;
+    }
+
+    @media (max-width: $clr_contact_l3_width) {
+      min-width: 307px;
+      max-width: 307px;
+    }
+
+    h3 {
+      padding-bottom: 12px;
+    }
+
+    label {
+      display: block;
+    }
+
+    input, textarea {
+      padding: 5px 4px;
+
+      border: 1px solid $color_border;
+      background: $color_background;
+      border-radius: 3px;
+    }
+  }
+
+  div.contact-form-left {
+    float: left;
+    margin-right: 20px;
+  }
+
+  div.contact-form-right {
+    float: left;
+
+    textarea {
+      height: 120px;
+    }
+  }
+
+  div.contact-field {
+    margin-bottom: 10px;
+  }
+
+  div.contact-form-bottom {
+    clear: left;
+    padding-top: 2px;
+
+    input {
+      outline: none;
+      border: none;
+      padding: 0 44px;
+
+      text-align: center;
+      line-height: 37px;
+      text-transform: uppercase;
+      font-size: 15px;
+      color: $color_submit_text;
+      cursor: pointer;
+      border-radius: 3px;
+      background: red;
+      transition: all .3s;
+
+      &:hover {
+        background: $color_active_link;
+      }
+    }
+  }
+
+  div.map {
+    border: 1px solid $color_border;
+    clear: both;
+  }
+
+  .error-field {
+    border: 1px solid red;
+    background-color: #ffefef;
+  }
+
+  .errorlist {
+    margin: 2px 0;
+    padding-left: 16px;
+    font-weight: bold;
+    color: red;
+  }
+
+  .errorlist li {
+    padding: 2px 0;
+  }
+
+  .send {
+    padding-top: 20px;
+    font-weight: bold;
+  }
+
+  .successful-send {
+    @extend .send;
+    color: green;
+  }
+
+  .fail-send {
+    @extend .send;
+    color: red;
+  }
+}
+

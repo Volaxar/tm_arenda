@@ -1,0 +1,16 @@
+{% load static arenda_extras %}
+
+<div class="filter">
+  <ul>
+    {% for kind in kind_list %}
+
+      <li>
+        <a href="{% url 'filter' kind.id %}">
+          <img src="{% get_media_prefix %}{% get_kind_icon %}">
+          <span>{{ kind.kind_plural|split_str }}</span>
+        </a>
+      </li>
+
+    {% endfor %}
+  </ul>
+</div>

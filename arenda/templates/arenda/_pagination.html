@@ -1,0 +1,31 @@
+{% if is_paginated %}
+  <div class="pagination">
+
+    <ul>
+
+      {% if page_obj.has_previous %}
+        <li><a href="{% url 'page' page_obj.previous_page_number %}">&#8592; Назад</a></li>
+      {% else %}
+        <li class="disabled"><span>&#8592; Назад</span></li>
+      {% endif %}
+
+      {% for page in paginator.page_range %}
+
+        {% if page == page_obj.number %}
+          <li class="active"><span>{{ page }}</span></li>
+        {% else %}
+          <li><a href="{% url 'page' page %}">{{ page }}</a></li>
+        {% endif %}
+
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <li><a href="{% url 'page' page_obj.next_page_number %}">Вперёд &#8594;</a></li>
+      {% else %}
+        <li class="disabled"><span>Вперёд &#8594;</span></li>
+      {% endif %}
+
+    </ul>
+
+  </div>
+{% endif %}

@@ -1,0 +1,20 @@
+div.content-about {
+
+  div.text-wrapper {
+    color: $color_text;
+    text-align: justify;
+  }
+
+  p.idented {
+    text-indent: 2em;
+  }
+
+  div.map {
+    border: 1px black solid;
+
+    a img {
+      width: 100%;
+    }
+  }
+}
+

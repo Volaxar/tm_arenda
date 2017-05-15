@@ -1,0 +1,18 @@
+footer {
+  box-shadow: 0 0 13px $color_shadow;
+
+  padding: 24px 20px 8px;
+  background: $color_menu_background;
+
+  @media (max-width: $clr_width) {
+    text-align: justify;
+    padding: 24px 0 8px;
+  }
+
+  p {
+    color: $color_footer_text;
+    line-height: 15px;
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+}

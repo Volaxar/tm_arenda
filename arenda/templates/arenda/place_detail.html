@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <title>{{ place.name }}</title>
+{% endblock %}
+
+{% block content %}
+  <div class="content content-detail">
+
+  {% include 'arenda/_detail_item.html' %}
+
+  </div>
+{% endblock %}

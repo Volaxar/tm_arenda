@@ -1,0 +1,51 @@
+{% load thumbnail static arenda_extras %}
+
+<h1>{{ place.name }}</h1>
+
+<div class="item-wrapper">
+  <div class="item-images">
+    {% if place.image_set.count %}
+      <ul class="image-gallery">
+        {% for image in place.image_set.all %}
+          {% thumbnail image "496x372" crop="center" as im %}
+            <li data-thumb="{{ im.url }}" data-src="{% get_media_prefix %}{{ image }}">
+              <img src="{{ im.url }}">
+            </li>
+          {% endthumbnail %}
+        {% endfor %}
+      </ul>
+    {% else %}
+      <div class="empty-image">
+        <img src="{% static 'arenda/images/foto_big.jpg' %}">
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="text-wrapper">
+    <div class="item-options">
+      <h3>Характеристики:</h3>
+
+      <ol>
+        <li>
+          Метраж: <b>{{ place.area }}</b> м<sup>2</sup>
+        </li>
+        <li>
+          Этаж: <b>{{ place.floor }}</b>
+        </li>
+        <li>
+          Цена: <b>{{ place.price }}</b> руб. в мес.
+        </li>
+        <li>
+          Стоимость: <b>{% get_cost place.price place.area %}</b> руб. в мес.
+        </li>
+      </ol>
+    </div>
+
+    <div class="item-desc">
+      <h3>Описание:</h3>
+
+      <p>{{ place.desc|safe }}</p>
+
+    </div>
+  </div>
+</div>
